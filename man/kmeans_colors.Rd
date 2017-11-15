@@ -7,12 +7,12 @@
 kmeans_colors(im, ncolors = 8)
 }
 \arguments{
-\item{im}{An image object of package **Magick**.}
+\item{im}{An image object of package \strong{Magick}.}
 
 \item{ncolors}{Number of colors (clusters). Default is 8.}
 }
 \value{
-An object of class *kcca* of package **flexclust**.
+An object of class \emph{kcca} of package \strong{flexclust}.
 }
 \description{
 Perform K-means on RGB colors

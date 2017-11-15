@@ -10,7 +10,7 @@ plot_color_matrix(raster)
 \item{raster}{A matrix of colors (in hex format, e.g. "#ffffff").}
 }
 \value{
-A *ggplot* object.
+A \emph{ggplot} object.
 }
 \description{
 Plot color matrix

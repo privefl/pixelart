@@ -1,6 +1,8 @@
+################################################################################
+
 #' Perform K-means on RGB colors
 #'
-#' @param im An image object of package **Magick**.
+#' @inheritParams pixelart
 #' @param ncolors Number of colors (clusters). Default is 8.
 #'
 #' @return An object of class *kcca* of package **flexclust**.
@@ -15,11 +17,13 @@ kmeans_colors <- function(im, ncolors = 8) {
   flexclust::kcca(apply(im[[1]], 1, as.integer), ncolors)
 }
 
+################################################################################
+
 #' Colors from kmeans
 #' 
 #' Get projection on kmeans for colors of image.
 #'
-#' @inheritParams kmeans_colors
+#' @inheritParams pixelart
 #' @param kmeans An object of class *kcca* of package **flexclust**.
 #'
 #' @return A matrix of colors (in hex format, e.g. "#ffffff").
@@ -44,3 +48,5 @@ colors_kmeans <- function(im, kmeans) {
   matrix(paste0("#", as.raw(tmp[, 1]), as.raw(tmp[, 2]), as.raw(tmp[, 3])), 
          nrow = dim(im[[1]])[2])
 }
+
+################################################################################

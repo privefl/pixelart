@@ -5,6 +5,9 @@
 \alias{pixelart}
 \alias{pixelart-package}
 \title{pixelart.}
+\arguments{
+\item{im}{An image object of package \strong{Magick}.}
+}
 \description{
 pixelart.
 }

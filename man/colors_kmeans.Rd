@@ -7,9 +7,9 @@
 colors_kmeans(im, kmeans)
 }
 \arguments{
-\item{im}{An image object of package **Magick**.}
+\item{im}{An image object of package \strong{Magick}.}
 
-\item{kmeans}{An object of class *kcca* of package **flexclust**.}
+\item{kmeans}{An object of class \emph{kcca} of package \strong{flexclust}.}
 }
 \value{
 A matrix of colors (in hex format, e.g. "#ffffff").

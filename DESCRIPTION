@@ -2,19 +2,22 @@ Package: pixelart
 Title: Make Pixel Art Models From Pictures 
 Version: 0.0.0.9000
 Authors@R: 
-    person("Florian", "Privé", 
-           email = "florian.prive.21@gmail.com", 
-           role = c("aut", "cre"))
+  person("Florian", "Privé", 
+         email = "florian.prive.21@gmail.com", 
+         role = c("aut", "cre"))
 Description: Make Pixel Art models from pictures.
 Depends: R (>= 3.3.0)
 Imports:
   flexclust,
+  glue,
   ggplot2,
   magick,
-  magrittr
-Suggests:
-  testthat  
+  magrittr,
+  shiny
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+URL: https://privefl.github.io/pixelart
+BugReports: https://github.com/privefl/pixelart/issues
 RoxygenNote: 6.0.1
+Roxygen: list(markdown = TRUE)

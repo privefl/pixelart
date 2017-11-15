@@ -1,3 +1,5 @@
+################################################################################
+
 #' Plot color matrix
 #'
 #' @param raster A matrix of colors (in hex format, e.g. "#ffffff").
@@ -6,7 +8,6 @@
 #' @export
 #' 
 #' @import ggplot2
-#' @importFrom magrittr %>%
 #'
 #' @examples
 #' (colors <- matrix(c("#008744", "#0057e7", "#d62d20", "#ffa700"), 2))
@@ -26,3 +27,5 @@ plot_color_matrix <- function(raster) {
     geom_vline(xintercept = c(0.5, rows + 0.5), size = 0.5) +
     geom_hline(yintercept = c(0.5, cols + 0.5), size = 0.5)
 }
+
+################################################################################
