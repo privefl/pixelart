@@ -12,7 +12,7 @@
 #' hex2rgb("#000000")
 hex2rgb <- function(color) {
   stringr::str_sub(color, c(2, 4, 6), c(3, 5, 7)) %>%
-    setNames(nm = as.raw(0:255))[.] %>%
+    stats::setNames(nm = as.raw(0:255))[.] %>%
     unname()
 }
 
