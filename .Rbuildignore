@@ -1,3 +1,4 @@
 ^package\.txt$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^webshot\.png$
