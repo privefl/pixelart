@@ -21,17 +21,19 @@ ui <- fluidPage(
     sidebarPanel(
       textInput("url", label = "URL of picture:", "https://goo.gl/nRQi5n"),
       
-      numericInput("resize1", label = "Width of initial downsize:",
-                   min = 50, max = 500, value = 100, step = 10),
+      sliderInput("resize1", label = "Width of initial downsize:",
+                   min = 50, max = 300, value = 100, step = 10),
       
       sliderInput("ncolors",
                   "Number of colors:",
                   min = 2,
-                  max = 12,
+                  max = 10,
                   value = 7),
       
-      numericInput("resize2", label = "Width of final downsize:",
+      sliderInput("resize2", label = "Width of final downsize:",
                    min = 10, max = 80, value = 20, step = 2),
+      
+      textInput("colorNA", label = "Color for missing:", "#ffffff"),
       
       fluidRow(
         column(12,
@@ -58,10 +60,15 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
   
-  im0 <- reactive({
+  im00 <- reactive({
     magick::image_read(input$url)
   }) %>% 
-    debounce(1500)
+    debounce(1000)
+  
+  im0 <- reactive({
+    color_impute(im00(), input$colorNA)
+  }) %>% 
+    debounce(1000)
   
   im1 <- reactive({
     downsize(im0(), input$resize1)
@@ -72,9 +79,9 @@ server <- function(input, output) {
     downsize(im0(), input$resize2)
   })
   
-  output$im0_plot <- renderPlot({
-    plot(im0())
-  })
+  # output$im0_plot <- renderPlot({
+  #   plot(im0())
+  # })
   
   output$im1_plot <- renderPlot({
     plot(im1())
@@ -90,12 +97,13 @@ server <- function(input, output) {
   
   output$code <- renderText({
     glue::glue(
-      "pixelart::pipeline(list(",
+      "pixelart::pipeline(",
       "  url = '{input$url}',", 
       "  resize1 = {input$resize1},",
       "  resize2 = {input$resize2},",
-      "  ncolors = {input$ncolors}",
-      "))",
+      "  ncolors = {input$ncolors},",
+      "  colorNA = '{input$colorNA}'",
+      ")",
       .sep = "\n"
     )
   }) 
@@ -103,4 +111,3 @@ server <- function(input, output) {
 
 # Run the application 
 shinyApp(ui = ui, server = server)
-

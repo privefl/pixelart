@@ -4,16 +4,18 @@
 \alias{pipeline}
 \title{Pipeline to get pixel art}
 \usage{
-pipeline(input)
+pipeline(url, resize1, ncolors, resize2, colorNA)
 }
 \arguments{
-\item{input}{A list with
-\itemize{
-\item \code{url}: the url of the image,
-\item \code{resize1}: the width of the initial downsize (for processing),
-\item \code{resize2}: the width of the final image,
-\item \code{ncolors}: the number of different colors
-}}
+\item{url}{URL of image.}
+
+\item{resize1}{Initial resize width for processing.}
+
+\item{ncolors}{Number of different colors.}
+
+\item{resize2}{Final resize widthg.}
+
+\item{colorNA}{Color replacing missing values (e.g. "#ffffff").}
 }
 \value{
 A \emph{ggplot} object.
@@ -22,10 +24,11 @@ A \emph{ggplot} object.
 Pipeline to get pixel art
 }
 \examples{
-pipeline(list(
+pipeline(
   url = "https://goo.gl/nRQi5n", 
   resize1 = 100,
   resize2 = 22,
-  ncolors = 7
-))
+  ncolors = 6,
+  colorNA = "#ffffff"
+)
 }

@@ -2,27 +2,28 @@
 
 #' Pipeline to get pixel art
 #'
-#' @param input A list with
-#'   - `url`: the url of the image,
-#'   - `resize1`: the width of the initial downsize (for processing), 
-#'   - `resize2`: the width of the final image,
-#'   - `ncolors`: the number of different colors   
+#' @param url URL of image.
+#' @param resize1 Initial resize width for processing.
+#' @param ncolors Number of different colors.
+#' @param resize2 Final resize widthg.
+#' @param colorNA Color replacing missing values (e.g. "#ffffff").
 #'
 #' @return A *ggplot* object.
 #' @export
 #'
 #' @examples
-#' pipeline(list(
+#' pipeline(
 #'   url = "https://goo.gl/nRQi5n", 
 #'   resize1 = 100,
 #'   resize2 = 22,
-#'   ncolors = 6
-#' ))
-pipeline <- function(input) {
-  im0 <- magick::image_read(input$url)
-  im1 <- downsize(im0, input$resize1)
-  im2 <- downsize(im0, input$resize2)
-  kmeans <- kmeans_colors(im1, input$ncolors)
+#'   ncolors = 6,
+#'   colorNA = "#ffffff"
+#' )
+pipeline <- function(url, resize1, ncolors, resize2, colorNA) {
+  im0 <- color_impute(magick::image_read(url), colorNA)
+  im1 <- downsize(im0, resize1)
+  im2 <- downsize(im0, resize2)
+  kmeans <- kmeans_colors(im1, ncolors)
   plot_color_matrix(colors_kmeans(im2, kmeans))
 }
 
