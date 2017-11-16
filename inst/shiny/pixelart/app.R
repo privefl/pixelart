@@ -10,6 +10,8 @@
 library(shiny)
 library(pixelart)
 
+URL_404 <- "https://st.depositphotos.com/1561359/4961/v/950/depositphotos_49616865-stock-illustration-3d-illustration-of-error-404.jpg"
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
   
@@ -61,7 +63,8 @@ ui <- fluidPage(
 server <- function(input, output) {
   
   im00 <- reactive({
-    magick::image_read(input$url)
+    tryCatch(magick::image_read(input$url), 
+             error = function(e) magick::image_read(URL_404))
   }) %>% 
     debounce(1000)
   
