@@ -10,7 +10,7 @@ devtools::install_github("privefl/pixelart")
 pixelart::run_app()
 ```
 
-<center>![Webshot of Shiny App](webshot.png)
+<center>![Webshot of Shiny App](https://raw.githubusercontent.com/privefl/pixelart/master/webshot.png)
 
 ## News
 
