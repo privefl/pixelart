@@ -1,0 +1,1 @@
+webshot::appshot("inst/shiny/pixelart/", delay = 6)
