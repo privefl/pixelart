@@ -4,7 +4,9 @@
 \alias{pipeline}
 \title{Pipeline to get pixel art}
 \usage{
-pipeline(url, resize1, ncolors, resize2, colorNA)
+pipeline(url, resize1 = 100, ncolors = 7, resize2 = 20,
+  color_bg = "white", saturation = 100, degrees = 0, left = 0,
+  top = 0, right = 0, bottom = 0)
 }
 \arguments{
 \item{url}{URL of image.}
@@ -15,7 +17,19 @@ pipeline(url, resize1, ncolors, resize2, colorNA)
 
 \item{resize2}{Final resize widthg.}
 
-\item{colorNA}{Color replacing missing values (e.g. "#ffffff").}
+\item{color_bg}{Color replacing missing values (e.g. "#ffffff").}
+
+\item{saturation}{modulation of saturation as percentage of the current value (100 for no change)}
+
+\item{degrees}{value between 0 and 360 for how many degrees to rotate}
+
+\item{left}{Number of pixels to crop to the left}
+
+\item{top}{Number of pixels to crop to the top}
+
+\item{right}{Number of pixels to crop to the right}
+
+\item{bottom}{Number of pixels to crop to the bottom}
 }
 \value{
 A \emph{ggplot} object.
@@ -29,6 +43,6 @@ pipeline(
   resize1 = 100,
   resize2 = 22,
   ncolors = 6,
-  colorNA = "#ffffff"
+  color_bg = "#ffffff"
 )
 }

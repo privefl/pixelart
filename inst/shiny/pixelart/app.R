@@ -20,58 +20,85 @@ ui <- fluidPage(
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
-    sidebarPanel(
+    sidebarPanel(width = 3,
       textInput("url", label = "URL of picture:", "https://goo.gl/nRQi5n"),
       
-      sliderInput("resize1", label = "Width of initial downsize:",
-                   min = 50, max = 300, value = 100, step = 10),
+      textInput("color_bg", label = "Color for background:", "white"),
       
-      sliderInput("ncolors",
-                  "Number of colors:",
-                  min = 2,
-                  max = 10,
-                  value = 7),
+      sliderInput("left",   "Crop left (pixels)",   value = 0, min = 0, max = 0),
+      sliderInput("top",    "Crop top (pixels)",    value = 0, min = 0, max = 0),
+      sliderInput("right",  "Crop right (pixels)",  value = 0, min = 0, max = 0),
+      sliderInput("bottom", "Crop bottom (pixels)", value = 0, min = 0, max = 0),
       
-      sliderInput("resize2", label = "Width of final downsize:",
-                   min = 10, max = 80, value = 20, step = 2),
+      sliderInput("rotate", "Rotation (degrees)", value = 0, 
+                  min = 0, max = 360, step = 90),
       
-      textInput("colorNA", label = "Color for missing:", "#ffffff"),
-      
-      fluidRow(
-        column(12,
-          h4("Code to reproduce:"),
-          verbatimTextOutput("code")
-        )
-      )
+      sliderInput("saturation", label = "Saturation:",
+                  min = 10, max = 300, value = 100, step = 10)
     ),
-    mainPanel(
+    mainPanel(width = 9,
       fluidRow(
-        # Show the initial image
         column(6, 
-               h2("Initial image"),
-               h3("(reduced for processing)"),
-               plotOutput("im1_plot")
+               sliderInput("resize1", label = "Width of initial downsize:",
+                           min = 50, max = 300, value = 100, step = 10),
+               
+               h2("Initial image"), h3("(reduced for processing)"),
+               plotOutput("im1_plot"),
+               
+               h4("Code to reproduce:"), verbatimTextOutput("code")
         ),
-        
-        column(6, h2("Pixel Art"), plotOutput("im2_plot"))
+        column(6, 
+               sliderInput("ncolors", "Number of colors:",
+                           min = 2, max = 10, value = 7),
+               sliderInput("resize2", label = "Width of final downsize:",
+                              min = 10, max = 80, value = 20, step = 2),
+               
+               h2("Pixel Art"), plotOutput("im2_plot"))
       )
     )
   )
 )
 
 # Define server logic required to draw a histogram
-server <- function(input, output) {
+server <- function(input, output, session) {
   
   im00 <- reactive({
-    tryCatch(magick::image_read(input$url), 
-             error = function(e) magick::image_read(URL_404))
+    tryCatch(
+      magick::image_background(
+        magick::image_read(input$url), 
+        input$color_bg
+      ), 
+      error = function(e) magick::image_read(URL_404)
+    )
   }) %>% 
     debounce(1000)
   
+  ## Slides as a function of the image
+  observeEvent(im00(), {
+    d <- dim(im00()[[1]])
+    w <- d[2]
+    h <- d[3]
+    updateSliderInput(session, "left", value = 0, min = 0, max = w / 2,
+                      step = max(1, round(w / 50)))
+    updateSliderInput(session, "right", value = 0, min = 0, max = w / 2,
+                      step = max(1, round(w / 50)))
+    updateSliderInput(session, "top", value = 0, min = 0, max = h / 2,
+                      step = max(1, round(h / 50)))
+    updateSliderInput(session, "bottom", value = 0, min = 0, max = h / 2,
+                      step = max(1, round(h / 50)))
+  })
+  
   im0 <- reactive({
-    color_impute(im00(), input$colorNA)
-  }) %>% 
-    debounce(1000)
+    im00() %>%
+      crop(
+        left = input$left,
+        right = input$right,
+        bottom = input$bottom,
+        top = input$top
+      ) %>%
+      magick::image_rotate(input$rotate) %>%
+      magick::image_modulate(saturation = input$saturation)
+  })
   
   im1 <- reactive({
     downsize(im0(), input$resize1)
@@ -105,7 +132,13 @@ server <- function(input, output) {
       "  resize1 = {input$resize1},",
       "  resize2 = {input$resize2},",
       "  ncolors = {input$ncolors},",
-      "  colorNA = '{input$colorNA}'",
+      "  color_bg = '{input$color_bg}',",
+      "  saturation = {input$saturation},",
+      "  degrees = {input$rotate},",
+      "  left = {input$left},",
+      "  top = {input$top},",
+      "  right = {input$right},",
+      "  bottom = {input$bottom}",
       ")",
       .sep = "\n"
     )

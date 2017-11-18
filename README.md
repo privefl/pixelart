@@ -12,3 +12,6 @@ pixelart::run_app()
 
 <center>![Webshot of Shiny App](webshot.png)
 
+## News
+
+- Nov 18: added some options for croping, rotating and saturating the image.
