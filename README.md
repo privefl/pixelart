@@ -10,11 +10,11 @@ devtools::install_github("privefl/pixelart")
 pixelart::run_app()
 ```
 
-<center><img src="webshot.png" alt="Webshot of Shiny App" style="width:80%;"></center>
+<center><img src="webshot.png" alt="Webshot of Shiny App" style="width:70%;"></center>
 
 ## Example
 
-<center><img src="kongs.png" alt="I present you Kong. **A.** Picture of Kong. **B.** Kong as a pixel art model with R package pixelart. **C. & D.** Two pixel art drawing of Kong, based on A & B." style="width:80%;"></center>
+<center><img src="kongs.png" alt="I present you Kong. **A.** Picture of Kong. **B.** Kong as a pixel art model with R package pixelart. **C. & D.** Two pixel art drawing of Kong, based on A & B." style="width:70%;"></center>
 
 ## News
 
