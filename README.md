@@ -16,7 +16,7 @@ Webshot of Shiny App:
 
 ## Example
 
-I present you Kong. **A.** Picture of Kong. **B.** Kong as a pixel art model with R package pixelart. **C. & D.** Two pixel art drawings of Kong, based on A & B.
+I present you Kong. **A.** Picture of Kong. **B.** Kong as a pixel art model, created with R package pixelart. **C. & D.** Two pixel art drawings of Kong, based on A & B.
 
 <center><img src="kongs.png" style="width:70%;"></center>
 
