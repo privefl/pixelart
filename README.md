@@ -23,3 +23,7 @@ I present you Kong. **A.** Picture of Kong. **B.** Kong as a pixel art model, cr
 ## News
 
 - Nov 18: added some options for croping, rotating and saturating the image.
+
+## To improve
+
+I think there is room for improving the pixel art models (e.g. better separation of colors). Maybe with [package imager](https://cran.r-project.org/web/packages/imager/vignettes/pixsets.html). Ideas are welcome.
