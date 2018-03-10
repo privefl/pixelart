@@ -5,8 +5,8 @@ account: florianprive
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 236125
-bundleId: 1082674
+bundleId: 1262772
 url: https://florianprive.shinyapps.io/pixelart/
-when: 1510992654.98249
+when: 1520722971.57297
 asMultiple: FALSE
 asStatic: FALSE
