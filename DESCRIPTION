@@ -12,6 +12,7 @@ Imports:
   flexclust,
   glue,
   ggplot2,
+  grDevices,
   magick,
   magrittr,
   shiny,

@@ -14,7 +14,12 @@
 #' kmeans <- kmeans_colors(im)
 #' kmeans@centers
 kmeans_colors <- function(im, ncolors = 8) {
-  flexclust::kcca(apply(im[[1]], 1, as.integer), ncolors)
+  
+  im[[1]] %>%
+    apply(1, as.integer) %>%
+    .[, 1:3] %>%
+    grDevices::convertColor(from = "sRGB", to = "Lab") %>%
+    flexclust::kcca(k = ncolors)
 }
 
 ################################################################################
@@ -39,14 +44,22 @@ kmeans_colors <- function(im, ncolors = 8) {
 #' plot_color_matrix(colors)
 colors_kmeans <- function(im, kmeans) {
   
-  tmp <- im[[1]] %>%
-    apply(1, as.integer) %>%
-    flexclust::predict(kmeans, .) %>%
-    kmeans@centers[., ] %>%
-    round()
+  rgb_mat <- apply(im[[1]], 1, as.integer)[, 1:3]
   
-  matrix(paste0("#", as.raw(tmp[, 1]), as.raw(tmp[, 2]), as.raw(tmp[, 3])), 
-         nrow = dim(im[[1]])[2])
+  clusters <- rgb_mat %>%
+    grDevices::convertColor(from = "sRGB", to = "Lab") %>%
+    flexclust::predict(kmeans, .)
+  
+  colors <- sapply(seq_len(kmeans@k), function(group) {
+    rgb_mat[clusters == group, 1:3, drop = FALSE] %>%
+      colMeans() %>%
+      round() %>%
+      as.raw() %>%
+      c("#", .) %>%
+      paste(collapse = "")
+  })
+  
+  matrix(colors[clusters], nrow = dim(im[[1]])[2])
 }
 
 ################################################################################

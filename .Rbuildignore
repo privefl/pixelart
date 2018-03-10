@@ -3,3 +3,4 @@
 ^\.Rproj\.user$
 ^webshot\.png$
 ^update-webshot\.R$
+^tmp-tests$
