@@ -22,7 +22,7 @@ I present you Kong. **A.** Picture of Kong. **B.** Kong as a pixel art model, cr
 
 ## News
 
-- March 10, 2017: run kmeans in the Lab space (instead of the RGB space)
+- March 10, 2018: run kmeans in the Lab space (instead of the RGB space)
 
 - Nov 18, 2017: added some options for croping, rotating and saturating the image
 
