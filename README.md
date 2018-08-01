@@ -1,4 +1,8 @@
-# Package pixelart
+[![Travis build status](https://travis-ci.org/privefl/pixelart.svg?branch=master)](https://travis-ci.org/privefl/pixelart)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/privefl/pixelart?branch=master&svg=true)](https://ci.appveyor.com/project/privefl/pixelart)
+[![CRAN status](https://www.r-pkg.org/badges/version/pixelart)](https://cran.r-project.org/package=pixelart)
+
+# R package {pixelart}
 
 R Package to make Pixel Art models. [[Blog post introducing the package]](https://privefl.github.io/blog/shiny-app-for-making-pixel-art-models/)
 

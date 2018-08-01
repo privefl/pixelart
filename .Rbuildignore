@@ -4,3 +4,6 @@
 ^webshot\.png$
 ^update-webshot\.R$
 ^tmp-tests$
+^kongs\.png$
+^\.travis\.yml$
+^appveyor\.yml$
