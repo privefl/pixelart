@@ -1,7 +1,7 @@
 Package: pixelart
 Title: Make Pixel Art Models From Pictures 
-Version: 0.0.2
-Date: 2017-11-18
+Version: 0.2.0
+Date: 2018-08-01
 Authors@R: 
   person("Florian", "Privé", 
          email = "florian.prive.21@gmail.com", 

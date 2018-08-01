@@ -73,7 +73,7 @@ server <- function(input, output, session) {
   }) %>% 
     debounce(1000)
   
-  ## Slides as a function of the image
+  ## Sliders as a function of the image
   observeEvent(im00(), {
     d <- dim(im00()[[1]])
     w <- d[2]

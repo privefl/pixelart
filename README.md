@@ -10,8 +10,11 @@ R Package to make Pixel Art models. [[Blog post introducing the package]](https:
 # Installation
 devtools::install_github("privefl/pixelart")
 
-# Run Shiny App
-pixelart::run_app()
+# Run Shiny app for pixel art models
+pixelart::run_pixelart()
+
+# Run Shiny app for resizing an image
+pixelart::run_resize()
 ```
 
 Webshot of Shiny App:
@@ -25,6 +28,8 @@ I present you Kong. **A.** Picture of Kong. **B.** Kong as a pixel art model, cr
 <center><img src="kongs.png" style="width:70%;"></center>
 
 ## News
+
+- August 1, 2018: add Shiny app for resizing images.
 
 - March 10, 2018: run kmeans in the Lab space (instead of the RGB space)
 
