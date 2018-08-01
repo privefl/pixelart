@@ -1,0 +1,12 @@
+name: resize
+title: resize
+username:
+account: florianprive
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 393353
+bundleId: 1512505
+url: https://florianprive.shinyapps.io/resize/
+when: 1533155610.69268
+asMultiple: FALSE
+asStatic: FALSE
