@@ -6,11 +6,30 @@ matrix:
   include:
   - r: release
     os: osx
+    brew_packages: imagemagick
   - r: release
     os: linux
     after_success: travis_wait Rscript -e 'covr::codecov()'
   - r: devel
     os: linux
+    
+addons:
+  apt:
+    update: true
+    sources:
+      - sourceline: 'ppa:opencpu/imagemagick'
+      - sourceline: 'ppa:ubuntugis/ppa'
+    packages:
+      - libmagick++-dev
+      - librsvg2-dev
+      - libwebp-dev
+      - libpoppler-cpp-dev
+      - libtesseract-dev
+      - libleptonica-dev
+      - tesseract-ocr-eng
+      - r-cran-rgdal
+      - libfftw3-dev
+      - cargo    
 
 sudo: false
 cache: packages
