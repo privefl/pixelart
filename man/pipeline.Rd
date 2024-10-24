@@ -4,9 +4,19 @@
 \alias{pipeline}
 \title{Pipeline to get pixel art}
 \usage{
-pipeline(url, resize1 = 100, ncolors = 7, resize2 = 20,
-  color_bg = "white", saturation = 100, degrees = 0, left = 0,
-  top = 0, right = 0, bottom = 0)
+pipeline(
+  url,
+  resize1 = 100,
+  ncolors = 7,
+  resize2 = 20,
+  color_bg = "white",
+  saturation = 100,
+  degrees = 0,
+  left = 0,
+  top = 0,
+  right = 0,
+  bottom = 0
+)
 }
 \arguments{
 \item{url}{URL of image.}

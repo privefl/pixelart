@@ -7,7 +7,7 @@
 downsize(im, npixel_width = 200)
 }
 \arguments{
-\item{im}{An image object of package \strong{Magick}.}
+\item{im}{An image object of package magick.}
 
 \item{npixel_width}{Number of pixels for the width of the image.}
 }

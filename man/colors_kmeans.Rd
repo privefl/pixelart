@@ -7,7 +7,7 @@
 colors_kmeans(im, kmeans)
 }
 \arguments{
-\item{im}{An image object of package \strong{Magick}.}
+\item{im}{An image object of package magick.}
 
 \item{kmeans}{An object of class \emph{kcca} of package \strong{flexclust}.}
 }

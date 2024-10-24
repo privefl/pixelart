@@ -1,12 +1,12 @@
 Package: pixelart
-Title: Make Pixel Art Models From Pictures 
-Version: 0.2.0
-Date: 2018-08-01
+Title: Resize Images and Make Pixel Art Models From Pictures 
+Version: 0.2.1
+Date: 2024-10-24
 Authors@R: 
   person("Florian", "Privé", 
          email = "florian.prive.21@gmail.com", 
          role = c("aut", "cre"))
-Description: Make Pixel Art models from pictures.
+Description: Resize and crop images, and make Pixel Art models from pictures (Shiny app).
 Depends: R (>= 3.3.0)
 Imports:
   flexclust,
@@ -19,8 +19,7 @@ Imports:
   stringr
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 URL: https://privefl.github.io/pixelart
 BugReports: https://github.com/privefl/pixelart/issues
-RoxygenNote: 6.1.0
+RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)

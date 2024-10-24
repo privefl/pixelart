@@ -7,7 +7,7 @@
 crop(im, left = 0, top = 0, right = 0, bottom = 0)
 }
 \arguments{
-\item{im}{An image object of package \strong{Magick}.}
+\item{im}{An image object of package magick.}
 
 \item{left}{Number of pixels to crop to the left}
 

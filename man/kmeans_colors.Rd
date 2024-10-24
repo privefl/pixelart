@@ -7,7 +7,7 @@
 kmeans_colors(im, ncolors = 8)
 }
 \arguments{
-\item{im}{An image object of package \strong{Magick}.}
+\item{im}{An image object of package magick.}
 
 \item{ncolors}{Number of colors (clusters). Default is 8.}
 }

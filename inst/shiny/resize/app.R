@@ -102,7 +102,7 @@ server <- function(input, output, session) {
     glue::glue("Current size: {infos$width} x {infos$height}")
   })
   
-  output$img <- renderImage({
+  output$img <- renderImage(deleteFile = TRUE, {
     
     image_write(image_with_border(), tmp_jpg, format = "jpg")
     

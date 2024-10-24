@@ -1,8 +1,0 @@
-- create repo on GitHub (no LICENSE)
-- make it an R project
-- create R/ directory
-- use `devtools::create_description()`
-- use `devtools::use_package_doc()`
-- restart the project
-- More -> Confugure Build Tools -> Generate doc -> Build & reload
-- Build & reload

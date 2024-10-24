@@ -2,7 +2,7 @@
 
 #' Downsize an image
 #'
-#' @inheritParams pixelart
+#' @inheritParams pixelart-package
 #' @param npixel_width Number of pixels for the width of the image.
 #'
 #' @return An image object of package **Magick** of reduced or equal size.
@@ -22,7 +22,7 @@ downsize <- function(im, npixel_width = 200) {
 
 #' Crop image
 #'
-#' @inheritParams pixelart
+#' @inheritParams pixelart-package
 #' @param left Number of pixels to crop to the left
 #' @param top Number of pixels to crop to the top
 #' @param right Number of pixels to crop to the right

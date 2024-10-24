@@ -2,7 +2,7 @@
 
 #' Perform K-means on RGB colors
 #'
-#' @inheritParams pixelart
+#' @inheritParams pixelart-package
 #' @param ncolors Number of colors (clusters). Default is 8.
 #'
 #' @return An object of class *kcca* of package **flexclust**.
@@ -28,7 +28,7 @@ kmeans_colors <- function(im, ncolors = 8) {
 #' 
 #' Get projection on kmeans for colors of image.
 #'
-#' @inheritParams pixelart
+#' @inheritParams pixelart-package
 #' @param kmeans An object of class *kcca* of package **flexclust**.
 #'
 #' @return A matrix of colors (in hex format, e.g. "#ffffff").

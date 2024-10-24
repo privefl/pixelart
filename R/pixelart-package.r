@@ -1,11 +1,12 @@
 ################################################################################
 
-#' pixelart.
+#' @param im An image object of package magick.
 #' 
-#' @param im An image object of package **Magick**.
-#' 
-#' @name pixelart
-#' @docType package
+#' @keywords internal
+"_PACKAGE"
+
+## usethis namespace: start
+## usethis namespace: end
 NULL
 
 ################################################################################

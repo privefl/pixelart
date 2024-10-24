@@ -1,14 +1,18 @@
-[![Travis build status](https://travis-ci.org/privefl/pixelart.svg?branch=master)](https://travis-ci.org/privefl/pixelart)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/privefl/pixelart?branch=master&svg=true)](https://ci.appveyor.com/project/privefl/pixelart)
-[![CRAN status](https://www.r-pkg.org/badges/version/pixelart)](https://cran.r-project.org/package=pixelart)
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/privefl/pixelart/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/privefl/pixelart/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/pixelart)](https://CRAN.R-project.org/package=pixelart)
+<!-- badges: end -->
 
 # R package {pixelart}
 
-R Package to make Pixel Art models. [[Blog post introducing the package]](https://privefl.github.io/blog/shiny-app-for-making-pixel-art-models/)
+R Package to to resize and crop images, and make Pixel Art models from your own pictures. [[Blog post introducing the package]](https://privefl.github.io/blog/shiny-app-for-making-pixel-art-models/)
 
 ```r
-# Installation
-devtools::install_github("privefl/pixelart")
+# Installation from CRAN
+install.packages("pixelart")
+
+# Installation from GitHub
+remotes::install_github("privefl/pixelart")
 
 # Run Shiny app for pixel art models
 pixelart::run_pixelart()
@@ -28,6 +32,8 @@ I present you Kong. **A.** Picture of Kong. **B.** Kong as a pixel art model, cr
 <center><img src="kongs.png" style="width:70%;"></center>
 
 ## News
+
+- October 24, 2024: release on CRAN
 
 - August 1, 2018: add Shiny app for resizing images.
 
