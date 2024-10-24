@@ -2,6 +2,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^webshot\.png$
+^webshot2\.png$
 ^update-webshot\.R$
 ^tmp-tests$
 ^kongs\.png$

@@ -5,7 +5,8 @@
 
 # R package {pixelart}
 
-R Package to to resize and crop images, and make Pixel Art models from your own pictures. [[Blog post introducing the package]](https://privefl.github.io/blog/shiny-app-for-making-pixel-art-models/)
+R Package to to resize and crop images, and make Pixel Art models from your own pictures.    
+[[Blog post introducing the package]](https://privefl.github.io/blog/shiny-app-for-making-pixel-art-models/)
 
 ```r
 # Installation from CRAN
@@ -21,17 +22,21 @@ pixelart::run_pixelart()
 pixelart::run_resize()
 ```
 
-Webshot of Shiny App:
+### Webshot of Shiny App for Pixel Art:
 
 <center><img src="webshot.png" style="width:70%;"></center>
 
-## Example
+### Webshot of Shiny App for cropping images:
+
+<center><img src="webshot2.png" style="width:60%;"></center>
+
+### Example
 
 I present you Kong. **A.** Picture of Kong. **B.** Kong as a pixel art model, created with R package pixelart. **C. & D.** Two pixel art drawings of Kong, based on A & B.
 
 <center><img src="kongs.png" style="width:70%;"></center>
 
-## News
+### News
 
 - October 24, 2024: release on CRAN
 
@@ -41,6 +46,6 @@ I present you Kong. **A.** Picture of Kong. **B.** Kong as a pixel art model, cr
 
 - Nov 18, 2017: added some options for croping, rotating and saturating the image
 
-## To improve
+### To improve
 
 I think there is room for improving the pixel art models (e.g. better separation of colors). Maybe with [package imager](https://cran.r-project.org/web/packages/imager/vignettes/pixsets.html). Ideas are welcome.
