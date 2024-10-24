@@ -5,7 +5,7 @@
 
 # R package {pixelart}
 
-R Package to to resize and crop images, and make Pixel Art models from your own pictures.    
+R Package to resize and crop images, and make Pixel Art models from your own pictures.    
 [[Blog post introducing the package]](https://privefl.github.io/blog/shiny-app-for-making-pixel-art-models/)
 
 ```r
