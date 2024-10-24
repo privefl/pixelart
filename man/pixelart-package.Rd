@@ -4,7 +4,7 @@
 \name{pixelart-package}
 \alias{pixelart}
 \alias{pixelart-package}
-\title{pixelart: Resize Images and Make Pixel Art Models From Pictures}
+\title{pixelart: Resize Images and Make Pixel Art Models from Pictures}
 \arguments{
 \item{im}{An image object of package magick.}
 }
@@ -14,7 +14,7 @@ Resize and crop images, and make Pixel Art models from pictures (Shiny app).
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://privefl.github.io/pixelart}
+  \item \url{https://github.com/privefl/pixelart/}
   \item Report bugs at \url{https://github.com/privefl/pixelart/issues}
 }
 

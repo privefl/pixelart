@@ -1,5 +1,5 @@
 Package: pixelart
-Title: Resize Images and Make Pixel Art Models From Pictures 
+Title: Resize Images and Make Pixel Art Models from Pictures 
 Version: 0.2.1
 Date: 2024-10-24
 Authors@R: 
@@ -19,7 +19,7 @@ Imports:
   stringr
 License: GPL-3
 Encoding: UTF-8
-URL: https://privefl.github.io/pixelart
+URL: https://github.com/privefl/pixelart/
 BugReports: https://github.com/privefl/pixelart/issues
 RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
